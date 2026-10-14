@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GMP Technology</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/fontawesome-free-7.3.0-web/css/all.min.css">
+  <link rel="stylesheet" href="/cssndex.css">
+</head>
+<style>
+  * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* HERO / NAVBAR*/
+
+.hero-sec {
+  background: #08011b;
+  width: 100%;
+  color: white;
+}
+
+.nav-bar {
+  width: 100%;
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  background: rgba(8, 1, 27, 0.96);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  min-width: 150px;
+}
+
+.brand img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.brand span {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand strong {
+  color: rgb(71, 71, 246);
+  font-size: 22px;
+}
+
+.brand small {
+  color: white;
+  font-size: 8px;
+  margin-top: 3px;
+}
+
+.lists {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.lists a {
+  text-decoration: none;
+  color: rgb(241, 235, 235);
+  font-size: 14px;
+}
+
+.lists a:hover {
+  color: rgb(130, 204, 240);
+}
+
+.lists i {
+  margin-left: 5px;
+  font-size: 9px;
+}
+
+.drop-menu {
+  position: absolute;
+  top: calc(100% + 17px);
+  left: 0;
+  min-width: 195px;
+  padding: 10px 0;
+  background: #10082a;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35), 0 0 20px rgba(138,43,226,0.15);
+  display: none;
+  z-index: 1000;
+}
+
+.drop-menu.show {
+  display: block;
+}
+
+.drop-menu a {
+  display: block;
+  padding: 10px 15px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.drop-menu a:hover {
+  background: rgba(59,59,236,0.2);
+}
+
+.arrow {
+  transition: transform .25s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.login-link {
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+  padding: 9px 13px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 15px;
+}
+
+.login-link:hover {
+  background: black;
+}
+
+.get-btn,
+.btn-primary,
+.start-now {
+  background: rgb(59,59,236);
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.get-btn {
+  width: 130px;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.get-btn:hover,
+.btn-primary:hover,
+.start-now:hover,
+.subs:hover {
+  background: rgb(5,116,219);
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* HERO CONTENT*/
+
+.hero {
+  max-width: 1450px;
+  min-height: 620px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 65px 50px 80px;
+  gap: 45px;
+}
+
+.left-hero {
+  flex: 1;
+  min-width: 0;
+}
+
+.right-hero {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.right-hero img {
+  width: 100%;
+  max-width: 690px;
+  height: auto;
+  object-fit: contain;
+}
+
+.message {
+  width: fit-content;
+  padding: 7px 11px;
+  color: white;
+  font-size: 12px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 8px 32px rgba(0,0,0,.35), 0 0 20px rgba(138,43,226,.15);
+}
+
+.all-in-one {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.all-in-one i {
+  color: rgb(15,1,78);
+  font-size: 17px;
+}
+
+.main-point {
+  color: white;
+  font-size: clamp(38px, 4vw, 56px);
+  line-height: 1.08;
+}
+
+.main-point span {
+  color: rgb(58, 38, 245);
+}
+
+.sub-heading {
+  color: white;
+  margin-top: 17px;
+  max-width: 650px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #c7c3d0;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+  max-width: 440px;
+}
+
+.btn-primary,
+.btn-secondary {
+  width: 210px;
+  padding: 13px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid white;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-secondary:hover {
+  background: black;
+}
+
+.btn-secondary i {
+  margin-right: 6px;
+}
+
+.short-info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  color: white;
+  font-size: 12px;
+  gap: 25px;
+}
+
+.short-info i {
+  margin-right: 6px;
+  color: rgb(59,59,236);
+}
+
+/* FEATURES / STEPS (AI-THEMED DARK MIDDLE LAYER) */
+
+
+
+.second-layer {
+  background: #ffffff;
+  width: 100%;
+  padding: 80px 0 100px;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid rgb(59, 59, 236);
+  border-bottom: 4px solid rgb(59, 59, 236);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Big Circle Top-Left & Bottom-Right Background Design */
+.second-layer::before,
+.second-layer::after {
+  content: '';
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  background: rgba(8, 1, 27, 0.04);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.second-layer::before {
+  top: -150px;
+  left: -150px;
+}
+
+.second-layer::after {
+  bottom: -150px;
+  right: -150px;
+}
+
+/* Little sparkles / subtle dark blue background dots */
+.second-layer .info-card,
+.second-layer .how-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.second-layer {
+  background-image: 
+    radial-gradient(rgba(8, 1, 27, 0.08) 1.5px, transparent 1.5px), 
+    radial-gradient(rgba(59, 59, 236, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px, 60px 60px;
+  background-position: 0 0, 20px 20px;
+}
+
+/* Feature Cards Grid (Crisp white cards with soft shadows) */
+.info-card {
+  max-width: 1300px;
+  margin: 0 auto 80px;
+  padding: 35px 45px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  background: #f8fafc;
+  border: 1px solid rgba(59, 59, 236, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.feature {
+  padding: 10px;
+  border-radius: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(59, 59, 236, 0.1);
+}
+
+.feature h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #08011b;
+  display: flex;
+  align-items: center;
+}
+
+.feature h3 i {
+  background: linear-gradient(135deg, rgb(24, 24, 101), rgb(59, 59, 236));
+  color: white;
+  font-size: 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  min-width: 48px;
+  margin-right: 12px;
+  box-shadow: 0 6px 16px rgba(59, 59, 236, 0.25);
+}
+
+.feature p {
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 12px 0 0 60px;
+  color: #64748b;
+}
+
+/* How It Works Wrapper */
+.how-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.how {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.badge-how {
+  display: inline-block;
+  color: rgb(59, 59, 236);
+  background: rgba(59, 59, 236, 0.08);
+  border: 1px solid rgba(59, 59, 236, 0.2);
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.G-T {
+  font-size: clamp(26px, 3vw, 34px);
+  color: #08011b;
+  font-weight: 700;
+}
+
+/* Steps Grid */
+.roll-two {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.cad {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 30px 25px;
+  background: #f8fafc;
+  border: 1px solid rgba(208, 204, 204, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cad::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: rgb(59, 59, 236);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cad:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(59, 59, 236, 0.12);
+  border-color: rgba(59, 59, 236, 0.3);
+}
+
+.cad:hover::before {
+  opacity: 1;
+}
+
+.step-number {
+  flex: 0 0 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgb(24, 24, 101), rgb(59, 59, 236));
+  color: white;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(59, 59, 236, 0.3);
+}
+
+.cad h4 {
+  font-size: 16px;
+  color: #08011b;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.cad p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+.start-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.start-now {
+  padding: 16px 50px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(38, 38, 230, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.start-now:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(5, 116, 219, 0.4);
+}
+/*FOOTER */
+
+.third-layer {
+  background: #08011b;
+  color: aliceblue;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1.2fr;
+  gap: 50px;
+  padding: 50px 70px 35px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.footer-logo img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.footer-logo p {
+  color: rgb(71,71,246);
+  font-size: 23px;
+}
+
+.footer-logo span {
+  display: block;
+  color: white;
+  font-size: 9px;
+}
+
+.wor {
+  margin-top: 15px;
+  max-width: 250px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgb(146,151,155);
+}
+
+.social {
+  display: flex;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.social a {
+  color: white;
+  font-size: 16px;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.lin {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lin h6 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.lin a {
+  text-decoration: none;
+  color: rgb(176,178,181);
+  font-size: 11px;
+}
+
+.lin a:hover {
+  color: white;
+}
+
+.stay h5 {
+  font-size: 15px;
+}
+
+.stay > p {
+  color: rgb(146,151,155);
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.get-it {
+  position: relative;
+  margin-top: 8px;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 11px;
+  color: white;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 4px;
+  outline: none;
+}
+
+input[type="email"]::placeholder {
+  color: #888;
+}
+
+.subs {
+  position: static;
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  background: rgb(59,59,236);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.copyright {
+  background: #08011b;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 10px;
+  padding: 15px 10px;
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+
+/* TABLET*/
+
+@media (max-width: 1000px) {
+  .nav-bar {
+    padding: 12px 25px;
+  }
+
+  .lists {
+    gap: 12px;
+  }
+
+  .lists a {
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 55px 30px;
+  }
+
+  .info-card {
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 22px;
+  }
+
+  .third-layer {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .nav-bar {
+    min-height: 65px;
+    padding: 10px 18px;
+  }
+
+  .brand {
+    min-width: auto;
+  }
+
+  .brand img {
+    width: 37px;
+    height: 37px;
+  }
+
+  .brand strong {
+    font-size: 19px;
+  }
+
+  .brand small {
+    font-size: 7px;
+  }
+
+  .menu-toggle {
+    display: block;
+    order: 3;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  .get-btn {
+    display: none;
+  }
+
+  .login-link {
+    font-size: 11px;
+    padding: 8px 11px;
+  }
+
+  .lists {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 8px 18px 18px;
+    background: #10082a;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 15px 30px rgba(0,0,0,.35);
+  }
+
+  .lists.mobile-open {
+    display: flex;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .lists > .nav-item > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 13px 4px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+  }
+
+  .desktop-only {
+    display: block;
+  }
+
+  .drop-menu {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    margin: 0 0 4px;
+    border: none;
+    border-radius: 7px;
+    box-shadow: none;
+    background: rgba(0,0,0,.18);
+  }
+
+  .drop-menu a {
+    padding: 11px 15px;
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: auto;
+    display: block;
+    padding: 55px 20px 50px;
+  }
+
+  .left-hero {
+    width: 100%;
+  }
+
+  .message {
+    margin-bottom: 17px;
+    font-size: 10px;
+  }
+
+  .main-point {
+    font-size: clamp(34px, 10vw, 44px);
+    line-height: 1.08;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .sub-heading {
+    font-size: 12px;
+    line-height: 1.7;
+    margin-top: 15px;
+  }
+
+  .cta-buttons {
+    max-width: none;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 50%;
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+
+  .short-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    font-size: 11px;
+  }
+
+  .right-hero {
+    display: flex;
+    margin-top: 35px;
+  }
+
+  .right-hero img {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .second-layer {
+    padding: 25px 18px 45px;
+  }
+
+  .info-card {
+    margin: 0 0 45px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    border: none;
+    box-shadow: none;
+  }
+
+  .feature {
+    padding: 18px;
+    border: 1px solid rgba(208,204,204,.5);
+    border-radius: 13px;
+    box-shadow: 0 5px 18px rgba(126,125,127,.1);
+  }
+
+  .feature h3 {
+    font-size: 13px;
+  }
+
+  .feature h3 i {
+    font-size: 18px;
+    padding: 7px;
+    padding-top: 15px;
+  }
+
+  .feature p {
+    margin-left: 37px;
+    font-size: 11px;
+  }
+
+  .G-T {
+    font-size: 21px;
+  }
+
+  .roll-two {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cad {
+    padding: 20px;
+  }
+
+  .start-btn {
+    margin-top: 25px;
+  }
+
+  .start-now {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .third-layer {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 40px 22px 30px;
+  }
+
+  .footer-brand {
+    text-align: center;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .wor {
+    max-width: 320px;
+    margin: 12px auto 0;
+  }
+
+  .social {
+    justify-content: center;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
+  }
+
+  .stay {
+    width: 100%;
+  }
+
+  .copyright {
+    font-size: 9px;
+    padding: 14px 5px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+
+  .nav-bar {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .login-link {
+    font-size: 10px;
+  }
+
+  .hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .main-point {
+    font-size: 33px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+
+  .short-info {
+    font-size: 10px;
+  }
+
+  .second-layer {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero-sec">
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+
+      <a class="brand" href="/html/Pages/index.html">
+        <img src="/images/logo.png" alt="GMP Technology logo">
+        <span><strong>GMP</strong><small>Technology</small></span>
+      </a>
+
+      <div class="lists">
+
+        <div class="nav-item">
+          <a href="#" class="nav-link">Products <i class="fa-solid fa-chevron-down arrow"></i></a>
+          <div class="drop-menu">
+            <a href="">Business Dashboard</a>
+            <a href="">Order Management</a>
+            <a href="">Inventory</a>
+            <a href="">Customers</a>
+            <a href="">Analytics</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="">Templates</a>
+        </div>
+
+        <div class="nav-item desktop-only">
+          <a href="">Solution</a>
+        </div>
+
+        <div class="nav-item desktop-only">
+          <a href="">Pricing</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="#" class="nav-link">Resource <i class="fa-solid fa-chevron-down arrow"></i></a>
+          <div class="drop-menu">
+            <a href="">Help Center</a>
+            <a href="">Documentation</a>
+            <a href="">Getting Started</a>
+            <a href="">Business Guard</a>
+            <a href="">Blog</a>
+            <a href="">FAQs</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="#" class="nav-link">Company <i class="fa-solid fa-chevron-down arrow"></i></a>
+          <div class="drop-menu">
+            <a href="">About Us</a>
+            <a href="">Contact</a>
+            <a href="">Privacy</a>
+            <a href="">Terms of Service</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="nav-actions">
+        <a class="login-link" href="/html/Pages/login.html">Login</a>
+        <a class="get-btn" href="/html/Pages/option-page.html">
+          Get Started <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </nav>
+
+    <!-- Hero content -->
+    <div class="hero">
+
+      <div class="left-hero">
+
+        <div class="message">
+          <p class="all-in-one">
+            <i class="fa-solid fa-circle"></i>
+            All-in-One Business Platform
+          </p>
+        </div>
+
+        <div class="hero-message">
+          <h1 class="main-point">
+            Everything your <br class="desktop-break">business needs.
+            <span><br class="desktop-break">All in One Place.</span>
+          </h1>
+
+          <p class="sub-heading">
+            Build your website, manage orders, track sales and grow your business with GMP Technology.
+            The all-in-one business platform that helps you run your business smoothly.
+          </p>
+        </div>
+
+        <div class="cta-buttons">
+          <a class="btn-primary" href="/html/Pages/option-page.html">
+            Get Started <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+          <button class="btn-secondary">
+            <i class="fa-solid fa-circle-play"></i>
+            See how it works
+          </button>
+        </div>
+
+        <div class="short-info">
+          <p><i class="fa-solid fa-circle-check"></i>No Credit Card Required</p>
+          <p><i class="fa-solid fa-circle-check"></i>14-days free trial</p>
+          <p><i class="fa-solid fa-circle-check"></i>Cancel anytime</p>
+        </div>
+
+      </div>
+
+      <div class="right-hero">
+        <img src="/images/heroimage.png" alt="GMP Technology dashboard preview">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURES + HOW IT WORKS -->
+  <section class="second-layer">
+
+    <!-- Features Grid -->
+    <div class="info-card">
+
+      <div class="feature">
+        <h3><i class="fa-solid fa-globe"></i>Beautiful Websites</h3>
+        <p>Create a professional website for your business in minutes.</p>
+      </div>
+
+      <div class="feature">
+        <h3><i class="fa-solid fa-shopping-bag"></i>Easy Order Management</h3>
+        <p>Manage orders, track status, and keep customers happy.</p>
+      </div>
+
+      <div class="feature">
+        <h3><i class="fa-solid fa-chart-simple"></i>Powerful Analytics</h3>
+        <p>Track your sales, customers, and growth in real-time.</p>
+      </div>
+
+      <div class="feature">
+        <h3><i class="fa-solid fa-shield"></i>Secure & Reliable</h3>
+        <p>Your data is safe with us. Always secure, always online.</p>
+      </div>
+
+    </div>
+
+    <!-- How It Works Section -->
+    <div class="how-wrapper">
+      <div class="how">
+        <span class="badge-how">HOW IT WORKS</span>
+        <h2 class="G-T">Get started in 3 simple steps</h2>
+      </div>
+
+      <div class="roll-two">
+
+        <div class="cad">
+          <span class="step-number">1</span>
+          <div>
+            <h4>Create Your Account</h4>
+            <p>Sign up for free and set up your business profile.</p>
+          </div>
+        </div>
+
+        <div class="cad">
+          <span class="step-number">2</span>
+          <div>
+            <h4>Choose What You Need</h4>
+            <p>Pick Website + Manager or Manager Only.</p>
+          </div>
+        </div>
+
+        <div class="cad">
+          <span class="step-number">3</span>
+          <div>
+            <h4>Start Managing & Growing</h4>
+            <p>Add your products and start growing your business.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="start-btn">
+        <a class="start-now" href="signup.html">
+          Start Now <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="third-layer">
+
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="/images/logo.png" alt="GMP Technology logo">
+        <p>GMP <span>Technology</span></p>
+      </div>
+
+      <p class="wor">
+        The all-in-one platform to build, manage, and grow your business online.
+      </p>
+
+      <div class="social">
+        <a href="https://www.facebook.com/share/1BnGaNyrb7/?mibextid=wwXIfr"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div class="lin">
+        <h6>Product</h6>
+        <a href="">Features</a>
+        <a href="">Templates</a>
+        <a href="">Pricing</a>
+        <a href="">Updates</a>
+      </div>
+
+      <div class="lin">
+        <h6>Company</h6>
+        <a href="">About Us</a>
+        <a href="">Careers</a>
+        <a href="">Blog</a>
+        <a href="">Contacts</a>
+      </div>
+
+      <div class="lin">
+        <h6>Resources</h6>
+        <a href="">Help Center</a>
+        <a href="">Guides</a>
+        <a href="">API Docs</a>
+        <a href="">Community</a>
+      </div>
+
+      <div class="lin">
+        <h6>Legal</h6>
+        <a href="">Privacy Policy</a>
+        <a href="">Terms of Service</a>
+        <a href="">Refund Policy</a>
+      </div>
+    </div>
+
+    <div class="stay">
+      <h5>Stay in the loop</h5>
+      <p>Subscribe to get the latest updates, tips, and offers from GMP Technology.</p>
+
+      <div class="get-it">
+        <input type="email" name="subscribe" id="subscribe" placeholder="Enter your Email">
+        <button class="subs">Subscribe</button>
+      </div>
+    </div>
+
+  </footer>
+
+  <div class="copyright">
+    © 2026 GMP Technology. All rights reserved.
+  </div>
+
+  <script>
+    // ========================================
+// GMP Technology - Navbar Dropdowns
+// ========================================
+
+const dropdownParents = document.querySelectorAll(".lists > .nav-item");
+
+dropdownParents.forEach(parent => {
+  const link = parent.querySelector(":scope > a");
+  const dropdown = parent.querySelector(":scope > .drop-menu");
+
+  if (!dropdown || !link) return;
+
+  link.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    // Close every other dropdown.
+    document.querySelectorAll(".drop-menu.show").forEach(menu => {
+      if (menu !== dropdown) {
+        menu.classList.remove("show");
+
+        const otherArrow = menu.parentElement.querySelector(":scope > a .arrow");
+        if (otherArrow) otherArrow.classList.remove("rotate");
+      }
+    });
+
+    // Toggle current dropdown.
+    dropdown.classList.toggle("show");
+
+    const arrow = link.querySelector(".arrow");
+    if (arrow) arrow.classList.toggle("rotate");
+  });
+});
+
+
+// ========================================
+// Mobile Menu
+// ========================================
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navLists = document.querySelector(".lists");
+
+if (menuToggle && navLists) {
+  menuToggle.addEventListener("click", function(event) {
+    event.stopPropagation();
+
+    const isOpen = navLists.classList.toggle("mobile-open");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+
+    menuToggle.innerHTML = isOpen
+      ? '<i class="fa-solid fa-xmark"></i>'
+      : '<i class="fa-solid fa-bars"></i>';
+  });
+}
+
+
+// ========================================
+// Close menus when clicking outside
+// ========================================
+
+document.addEventListener("click", function(event) {
+
+  const clickedInsideNav = event.target.closest(".nav-bar");
+
+  if (!clickedInsideNav) {
+    document.querySelectorAll(".drop-menu.show").forEach(menu => {
+      menu.classList.remove("show");
+
+      const arrow = menu.parentElement.querySelector(":scope > a .arrow");
+      if (arrow) arrow.classList.remove("rotate");
+    });
+
+    if (navLists) {
+      navLists.classList.remove("mobile-open");
+    }
+
+    if (menuToggle) {
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+  }
+});
+
+
+// ========================================
+// Close mobile menu after selecting a normal link
+// ========================================
+
+document.querySelectorAll(".lists a:not(.nav-link)").forEach(link => {
+  link.addEventListener("click", function() {
+    if (window.innerWidth <= 768 && navLists) {
+      navLists.classList.remove("mobile-open");
+
+      if (menuToggle) {
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      }
+    }
+  });
+});
+
+
+// ========================================
+// Reset mobile menu when returning to desktop
+// ========================================
+
+window.addEventListener("resize", function() {
+  if (window.innerWidth > 768 && navLists) {
+    navLists.classList.remove("mobile-open");
+
+    if (menuToggle) {
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+  }
+});
+
+  </script>
+</body>
+</html>

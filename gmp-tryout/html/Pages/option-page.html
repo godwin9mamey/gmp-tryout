@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMP Technology | Choose Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/fontawesome-free-7.3.0-web/css/all.min.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #030412;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    max-width: 1240px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+}
+
+.brand img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.brand span {
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.brand strong {
+    font-weight: 700;
+}
+
+.rig {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.help {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.login {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 9px 22px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.login:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.create-account {
+    background: #6366f1;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    transition: 0.2s;
+}
+
+.create-account:hover {
+    background: #4f46e5;
+}
+
+/* Header Titles */
+.wordings {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.badge-pill {
+    display: inline-block;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: #c4b5fd;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.how {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.choose {
+    color: #9ca3af;
+    font-size: 1rem;
+}
+
+/* Cards Container */
+.container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    max-width: 1240px;
+    margin-bottom: 30px;
+}
+
+.card-I, .card-II {
+    flex: 1;
+    background: rgba(15, 18, 36, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+}
+
+.card-I.recommended-card {
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 10px 40px rgba(139, 92, 246, 0.08);
+}
+
+.spc {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.icon-box-primary, .icon-box-secondary {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+}
+
+.icon-box-primary {
+    background: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+}
+
+.icon-box-secondary {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+}
+
+.web-nam {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.web-words {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Recommended Tag */
+.recom {
+    background: rgba(139, 92, 246, 0.15);
+    color: #c4b5fd;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Split layout inside card (Lists + Mockup Preview) */
+.card-body-split {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.web-manager, .mgr-only {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1.1;
+}
+
+.web-manager li, .mgr-only li {
+    font-size: 0.9rem;
+    color: #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.web-manager li i {
+    color: #6366f1;
+    font-size: 1rem;
+}
+
+.mgr-only li i {
+    color: #10B981;
+    font-size: 1rem;
+}
+
+/* Previews */
+.preview-box {
+    flex: 1.2;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.preview-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Action Buttons */
+.btn-wrap {
+    width: 100%;
+}
+
+.web-mana-btn, .manager-only-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.web-mana-btn {
+    background: #6366f1;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+.web-mana-btn:hover {
+    background: #4f46e5;
+}
+
+.manager-only-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.manager-only-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: white;
+}
+
+/* Footer Stats Banner */
+.footer-stats {
+    width: 100%;
+    max-width: 1240px;
+    background: rgba(15, 18, 36, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 25px;
+}
+
+.fo-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.v-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.f-icon-box {
+    width: 44px;
+    height: 44px;
+    background: rgba(139, 92, 246, 0.12);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a78bfa;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.v-item h6 {
+    font-size: 0.95rem;
+    color: white;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.v-item p {
+    font-size: 0.78rem;
+    color: #9ca3af;
+    line-height: 1.4;
+}
+
+/* Bottom Aid Text */
+.aid {
+    margin-bottom: 20px;
+}
+
+.aid p {
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+.aid a {
+    color: #a78bfa;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.aid a:hover {
+    text-decoration: underline;
+}
+
+.page-end {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.end {
+    color: #6b7280;
+    font-size: 0.8rem;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+    .card-body-split {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .fo-items {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .fo-items {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a class="brand" href="/html/Pages/index.html">
+            <img src="/images/logo.png" alt="GMP Technology logo">
+            <span><strong>GMP</strong> Technology</span>
+        </a>
+
+        <div class="rig">
+            <a href="#" class="help"><i class="fa-solid fa-circle-question"></i> Need help?</a>
+            <a href="/html/Pages/login.html" class="login">Login</a>
+            <a href="/html/Pages/signup.html" class="create-account">Create Account <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <div class="wordings">
+        <div class="badge-pill">
+            <span>Welcome to GMP Technology 👋</span>
+        </div>
+        <h2 class="how">How would you like to use GMP Technology?</h2>
+        <p class="choose">Choose the experience that fits your business needs.</p>
+    </div>
+    
+    <div class="container">
+        <!-- Card I: Website + Manager -->
+        <div class="card-I recommended-card"> 
+            <div>
+                <div class="spc">
+                    <div class="nam">
+                        <div class="icon-box-primary">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h3 class="web-nam">Website + Manager</h3>
+                        <p class="web-words">Create a professional website for your business and manage everything from one place.</p>
+                    </div>
+
+                    <div class="reco">
+                        <span class="recom"><i class="fa-solid fa-star"></i> Recommended</span>
+                    </div>
+                </div>
+
+                <div class="card-body-split">
+                    <ul class="web-manager">
+                        <li><i class="fa-solid fa-check-circle"></i> Create your online store</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Accept orders from customers</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Manage products & inventory</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Track orders & customers</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Get analytics & growth insights</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Free subdomain & hosting</li>
+                    </ul>
+                    <div class="preview-box">
+                        <img src="/images/cardimg-ll.png" alt="Website Preview">
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-wrap">
+                <a href="/html/Pages/signup.html" class="web-mana-btn">Choose Website + Manager <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Card II: Manager Only -->
+        <div class="card-II">
+            <div>
+                <div class="spc">
+                    <div class="nam">
+                        <div class="icon-box-secondary">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="web-nam">Manager Only</h3>
+                        <p class="web-words">Already have a website? Use GMP Technology to manage your business efficiently.</p>
+                    </div>
+                </div>
+
+                <div class="card-body-split">
+                    <ul class="mgr-only">
+                        <li><i class="fa-solid fa-check-circle"></i> Manage products & inventory</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Track orders & customers</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Analytics & reports</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Manage team members</li>
+                        <li><i class="fa-solid fa-check-circle"></i> AI business assistant</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Works with any website</li>
+                    </ul>
+                    <div class="preview-box">
+                        <img src="/images/cardimg-I.png" alt="Dashboard Preview">
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-wrap">
+                <a href="/html/Pages/signup.html" class="manager-only-btn">Choose Manager Only <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Trust Bar -->
+    <div class="footer-stats">
+        <div class="fo-items">
+            <div class="v-item">
+                <div class="f-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                <div>
+                    <h6>Secure & Reliable</h6>
+                    <p>Your data is safe with enterprise-grade security.</p>
+                </div>
+            </div>
+            <div class="v-item">
+                <div class="f-icon-box"><i class="fa-solid fa-bolt"></i></div>
+                <div>
+                    <h6>Easy to Use</h6>
+                    <p>Simple tools that help you save time and grow faster.</p>
+                </div>
+            </div>
+            <div class="v-item">
+                <div class="f-icon-box"><i class="fa-solid fa-headset"></i></div>
+                <div>
+                    <h6>24/7 Support</h6>
+                    <p>Our team is here to help you anytime, anywhere.</p>
+                </div>
+            </div>
+            <div class="v-item">
+                <div class="f-icon-box"><i class="fa-solid fa-rocket"></i></div>
+                <div>
+                    <h6>Built for Growth</h6>
+                    <p>Powerful features to scale your business effortlessly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="aid">
+        <p>Not sure which one to choose? <a href="#">Compare Plans <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i></a></p>
+    </div>
+
+    <div class="page-end">
+        <p class="end">GMP Technology Ltd. &copy; 2026. All rights reserved.</p>
+    </div>
+
+    <script src="/javascript/genix.js"></script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMP Technology | Login</title>
+    <link rel="stylesheet" href="/fontawesome-free-7.3.0-web/css/all.min.css">
+    
+</head>
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(0, 1, 26);
+    color: #f3f4f6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 720px;
+    background: rgba(10, 12, 28, 0.7);
+    border: 1px solid rgba(138, 43, 226, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(138, 43, 226, 0.1);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    margin: 20px;
+}
+
+/* Left Side: Branding & Features */
+.left-side {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.web-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.web-logo img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.logo-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+}
+
+.logo-title span {
+    color: #8B5CF6;
+}
+
+.badge-ai {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.wel-words .wel {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.wel span {
+    color: #8B5CF6;
+}
+
+.hero {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.ai-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 25px 0;
+}
+
+.feature-item {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.feat-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8B5CF6;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.feature-item h4 {
+    font-size: 0.9rem;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.feature-item p {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.footer-note p {
+    font-size: 0.85rem;
+    color: #a78bfa;
+    font-weight: 500;
+}
+
+.footer-note b {
+    color: white;
+    margin: 0 4px;
+}
+
+/* Right Side: High-Tech Login Form Card */
+.right-side {
+    flex: 1.1;
+    background: rgba(15, 18, 36, 0.85);
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.signup-card-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.register-header {
+    margin-bottom: 25px;
+}
+
+.register-header h2 {
+    font-size: 1.6rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.reg-label {
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+.magic {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-box label {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+.input-field {
+    position: relative;
+    width: 100%;
+}
+
+.input-field i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.password-eye {
+    left: auto !important;
+    right: 14px;
+    cursor: pointer;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 11px 40px 11px 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 0.9rem;
+    outline: none;
+    transition: 0.2s;
+}
+
+.input-field input:focus {
+    border-color: #8B5CF6;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+}
+
+input::placeholder {
+    color: #4b5563;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #9ca3af;
+    margin: 4px 0;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.forgot-link {
+    color: #8B5CF6;
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+#submit {
+    width: 100%;
+    background: #8B5CF6;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 0.2s;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+#submit:hover {
+    background: #7c3aed;
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+.divider {
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    line-height: 0.1em;
+    margin: 20px 0;
+}
+
+.divider span {
+    background: rgb(15, 18, 36);
+    padding: 0 15px;
+    color: #6b7280;
+    font-size: 0.8rem;
+}
+
+.google-btn {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 11px;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.google-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(139, 92, 246, 0.4);
+}
+
+.google-icon {
+    font-weight: bold;
+    color: #4285F4;
+}
+
+.r-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-link {
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+.signup-link a {
+    color: #8B5CF6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        margin: 10px;
+    }
+    .left-side {
+        display: none;
+    }
+    .right-side {
+        padding: 30px 20px;
+    }
+}
+</style>
+<body>
+
+    <div class="container">
+        <!-- Left Side: AI Branding & Value Props -->
+        <div class="left-side">
+            <div class="web-logo">
+                <img src="/images/logo.png" alt="GMP Technology logo" class="logo">
+                <p class="logo-title">GMP <span>Technology</span></p>               
+            </div>
+
+            <div class="wel-words">
+                <div class="badge-ai"><i class="fa-solid fa-robot"></i> AI Business Assistant</div>
+                <h1 class="wel">Build. Manage. <span>Grow.</span></h1>
+                <p class="hero">Everything your business needs in one place. Websites, orders, inventory, customers, analytics, and more... All powered by GMP Technology.</p>
+            </div>
+
+            <div class="ai-features">
+                <div class="feature-item">
+                    <div class="feat-icon"><i class="fa-solid fa-globe"></i></div>
+                    <div>
+                        <h4>Business Websites</h4>
+                        <p>Launch high-converting web presence instantly.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feat-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                    <div>
+                        <h4>Order Management</h4>
+                        <p>Track fulfillment and inventory effortlessly.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feat-icon"><i class="fa-solid fa-chart-column"></i></div>
+                    <div>
+                        <h4>Powerful Analytics</h4>
+                        <p>Real-time insights driving intelligent decisions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-note">
+                <p>Your Vision <b>+</b> Our Technology <b>=</b> Real Growth</p>
+            </div>
+        </div>
+
+        <!-- Right Side: Sleek Card Login Form -->
+        <div class="right-side">
+            <div class="signup-card-container">
+                <div class="register-header">
+                    <h2>Welcome back!</h2>
+                    <p class="reg-label">Sign in to your account to continue.</p>
+                </div>
+
+                <form class="magic" id="loginForm">
+                    <div class="input-box">
+                        <label>Email Address</label>
+                        <div class="input-field">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" id="loginEmail" placeholder="name@company.com" required>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Password</label>
+                        <div class="input-field">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="loginPassword" placeholder="••••••••••••" required>
+                            <i class="fa-regular fa-eye password-eye" id="togglePassword"></i>
+                        </div>
+                    </div>
+
+                    <div class="login-options">
+                        <label class="remember-me">
+                            <input type="checkbox">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" id="submit">
+                        Sign In <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <div class="divider"><span>Or</span></div>
+
+                    <button type="button" class="google-btn">
+                        <span class="google-icon">G</span> Continue with Google
+                    </button>
+
+                    <div class="r-footer">
+                        <p class="signup-link">Don't have an account? <a href="/html/Pages/signup.html">Get started</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

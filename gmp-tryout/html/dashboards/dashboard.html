@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/fontawesome-free-7.3.0-web/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMP Technology - Business Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+
+   <aside class="sidebar" id="sidebar">
+        <div class="top">
+            <div class="logo">
+                <img src="/images/logo.png" alt="GMP Technology Logo">
+                <h2>GMP Technology</h2>
+            </div>
+            <div>
+                <button class="menu-btn" id="menuBtn">
+                    <i class="fa-solid fa-xmark" style="color: white;"></i>
+                </button>
+            </div>
+        </div>
+    
+        <a href="#" class="active"><i class="fa-solid fa-home" style="color:white;"></i>Dashboard</a>
+        <a href="#aiSection"><i class="fa-solid fa-robot" style="color: white;"></i>AI Assistant</a>
+
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span><i class="fa-solid fa-box" style="color: white;"></i>Products</span>
+                <span class="arrow"><i class="fa-solid fa-chevron-down arrow"></i></span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">All Products</a>
+                <a href="#">Add Products</a>
+                <a href="#">Categories</a>
+                <a href="#">Inventory</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span><i class="fa-solid fa-cart-arrow-down" style="color: white;"></i>Orders</span>
+                <span class="arrow"><i class="fa-solid fa-chevron-down arrow"></i></span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">All Orders</a>
+                <a href="#">Pending Orders</a>
+                <a href="#">Processing</a>
+                <a href="#">Completed</a>
+                <a href="#">Cancelled</a>
+                <a href="#">Returns</a>
+            </div>
+        </div>
+
+        <a href="#"><i class="fa-solid fa-users" style="color: white;"></i>Customers</a>
+        <a href="#"><i class="fa-solid fa-warehouse" style="color: white;"></i>Inventory</a>
+       
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span><i class="fa-solid fa-chart-line" style="color: white;"></i>Reports</span>
+                <span class="arrow"><i class="fa-solid fa-chevron-down arrow"></i></span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Overview</a>
+                <a href="#">Sales</a>
+                <a href="#">Revenue</a>
+                <a href="#">Products</a>
+                <a href="#">Customers</a>
+                <a href="#">AI Insights</a>
+            </div>
+        </div>
+
+        <a href="#"><i class="fa-solid fa-crown" style="color: white;"></i>Subscription</a>
+
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span><i class="fa-solid fa-cog" style="color: white;"></i>Settings</span>
+                <span class="arrow"><i class="fa-solid fa-chevron-down arrow"></i></span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Business Profile</a>
+                <a href="#">Account</a>
+                <a href="#">Notifications</a>
+                <a href="#">Security</a>
+                <a href="#">AI Settings</a>
+                <a href="#">Integrations</a>
+                <a href="#">Billing & Subscription</a>
+            </div>
+        </div>
+        
+        <div class="sub-card">
+            <div class="plan">
+                <div class="right-plan">
+                    <h3 class="pro"><i class="fa-regular fa-gem" style="color: #8B5CF6;"></i>Pro Plan</h3>
+                    <p class="trial-message">Your trial ends in</p> <span id="trial-days" class="trial-days">0</span> days
+                </div>
+                <div class="sub-status">
+                    <span class="status-active">Active</span>
+                </div>
+            </div>
+            <div class="button">
+                <button id="sub-btn">Upgrade Plan</button>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="top-header">
+            <div class="topbar">
+                <div class="left">
+                    <div class="toggle" id="sidebarToggle">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" name="search" id="searchInput" placeholder="Search products, orders...">
+                    </div>
+                </div> 
+                <div class="right">          
+                    <div class="noti"><i class="fa-solid fa-bell"></i></div>
+                    <div class="message"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="profile">
+                        <span id="profileInitial">GM</span>
+                    </div>
+                </div>               
+            </div>
+        </header>
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="welcome-text">
+                <h1>Welcome back, {username}! 👋</h1>
+                <p>Here is what's happening with your business today.</p>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon" style="background: rgba(139, 92, 246, 0.1); color: #8B5CF6;"><i class="fa-solid fa-dollar-sign"></i></div>
+                <div class="stat-info">
+                    <h3>Total Revenue</h3>
+                    <h2>$0.00</h2>
+                    <span class="trend positive">00.0% this month</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: rgba(59, 130, 246, 0.1); color: #3B82F6;"><i class="fa-solid fa-box"></i></div>
+                <div class="stat-info">
+                    <h3>Active Products</h3>
+                    <h2>0</h2>
+                    <span class="trend positive">0 added today</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: #10B981;"><i class="fa-solid fa-cart-shopping"></i></div>
+                <div class="stat-info">
+                    <h3>Total Orders</h3>
+                    <h2>0</h2>
+                    <span class="trend positive">00.0% vs last week</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Management Table Section -->
+        <section class="orders-section">
+            <div class="section-header">
+                <h2>Product Inventory Status</h2>
+                <button class="action-btn">View All</button>
+            </div>
+            <div class="table-container">
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productTableBody">
+                        <tr>
+                            <td>Genix Wireless Headphones</td>
+                            <td>Electronics</td>
+                            <td>$129.99</td>
+                            <td>45 units</td>
+                            <td><span class="badge active">In Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td>Ergonomic Office Chair</td>
+                            <td>Furniture</td>
+                            <td>$249.50</td>
+                            <td>12 units</td>
+                            <td><span class="badge active">In Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td>Ultra-Slim Portable Charger</td>
+                            <td>Accessories</td>
+                            <td>$45.00</td>
+                            <td>3 units</td>
+                            <td><span class="badge warning">Low Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td>Smart Fitness Tracker Pro</td>
+                            <td>Wearables</td>
+                            <td>$89.99</td>
+                            <td>0 units</td>
+                            <td><span class="badge danger">Out of Stock</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- AI Product Assistant Chat Box Section -->
+        <section class="ai-section" id="aiSection">
+            <div class="ai-chat-container">
+                <div class="ai-chat-header">
+                    <i class="fa-solid fa-robot"></i>
+                    <div>
+                        <h3>Genix AI Product Assistant</h3>
+                        <p>Ask me anything about your stock, pricing, or product availability.</p>
+                    </div>
+                </div>
+                <div class="ai-chat-messages" id="aiChatMessages">
+                    <div class="ai-msg bot">
+                        Hello Godwin! I'm your AI product finder. Type what product you're looking for below, and I'll search your inventory instantly.
+                    </div>
+                </div>
+                <div class="ai-chat-input-area">
+                    <input type="text" id="aiChatInput" placeholder="e.g., Check stock for Wireless Headphones...">
+                    <button id="aiSendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+
+            document.addEventListener("DOMContentLoaded", () => {
+    // 1. Sidebar Dropdown Toggles
+    const dropdownBtns = document.querySelectorAll(".dropdown-btn");
+    dropdownBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const dropdown = btn.parentElement;
+            dropdown.classList.toggle("active");
+        });
+    });
+
+    // 2. Sidebar Mobile Open / Close Toggle
+    const sidebar = document.getElementById("sidebar");
+    const sidebarToggle = document.getElementById("sidebarToggle");
+    const menuBtn = document.getElementById("menuBtn");
+
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener("click", () => {
+            sidebar.classList.toggle("show");
+        });
+    }
+
+    if (menuBtn) {
+        menuBtn.addEventListener("click", () => {
+            sidebar.classList.remove("show");
+        });
+    }
+
+    // 3. Global Top Bar Search Filtering (Filters the Product Table)
+    const searchInput = document.getElementById("searchInput");
+    const productRows = document.querySelectorAll("#productTableBody tr");
+
+    if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+            const term = e.target.value.toLowerCase();
+            productRows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(term) ? "" : "none";
+            });
+        });
+    }
+
+    // 4. AI Product Assistant Chat Box Logic
+    const aiChatInput = document.getElementById("aiChatInput");
+    const aiSendBtn = document.getElementById("aiSendBtn");
+    const aiChatMessages = document.getElementById("aiChatMessages");
+
+    // Sample inventory database for the AI to query
+    const inventoryDatabase = [
+        { name: "Genix Wireless Headphones", category: "Electronics", price: "$129.99", stock: "45 units", status: "In Stock" },
+        { name: "Ergonomic Office Chair", category: "Furniture", price: "$249.50", stock: "12 units", status: "In Stock" },
+        { name: "Ultra-Slim Portable Charger", category: "Accessories", price: "$45.00", stock: "3 units", status: "Low Stock" },
+        { name: "Smart Fitness Tracker Pro", category: "Wearables", price: "$89.99", stock: "0 units", status: "Out of Stock" }
+    ];
+
+    function handleAIChat() {
+        const query = aiChatInput.value.trim();
+        if (!query) return;
+
+        // Append User Message
+        const userMsgDiv = document.createElement("div");
+        userMsgDiv.className = "ai-msg user";
+        userMsgDiv.textContent = query;
+        aiChatMessages.appendChild(userMsgDiv);
+
+        aiChatInput.value = "";
+        aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+
+        // Simulate AI search delay and response
+        setTimeout(() => {
+            const botMsgDiv = document.createElement("div");
+            botMsgDiv.className = "ai-msg bot";
+
+            const matches = inventoryDatabase.filter(item => 
+                item.name.toLowerCase().includes(query.toLowerCase()) || 
+                item.category.toLowerCase().includes(query.toLowerCase())
+            );
+
+            if (matches.length > 0) {
+                let responseText = `Found ${matches.length} matching product(s):\n`;
+                matches.forEach(m => {
+                    responseText += `• ${m.name} (${m.category}) - ${m.price} - Stock: ${m.stock} [${m.status}]\n`;
+                });
+                botMsgDiv.innerText = responseText;
+            } else {
+                botMsgDiv.innerText = `I couldn't find any products matching "${query}" in your inventory database. Try searching for "Headphones", "Chair", or "Charger".`;
+            }
+
+            aiChatMessages.appendChild(botMsgDiv);
+            aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+        }, 500);
+    }
+
+    if (aiSendBtn && aiChatInput) {
+        aiSendBtn.addEventListener("click", handleAIChat);
+        aiChatInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                handleAIChat();
+            }
+        });
+    }
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMP Technology - AI Business Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/fontawesome-free-7.3.0-web/css/all.min.css">
+   <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(0, 1, 26);
+    color: #f3f4f6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 720px;
+    background: rgba(10, 12, 28, 0.7);
+    border: 1px solid rgba(138, 43, 226, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(138, 43, 226, 0.1);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    margin: 20px;
+}
+
+/* Left Side: Branding & Features */
+.left-side {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.web-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.web-logo img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.logo-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+}
+
+.logo-title span {
+    color: #8B5CF6;
+}
+
+.badge-ai {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.wel-words .wel {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.wel span {
+    color: #8B5CF6;
+}
+
+.hero {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.ai-features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.feature-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.feat-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8B5CF6;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.feature-item h4 {
+    font-size: 0.95rem;
+    color: #fff;
+    margin-bottom: 3px;
+}
+
+.feature-item p {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    line-height: 1.4;
+}
+
+.footer-note p {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Right Side: High-Tech Form Card */
+.right-side {
+    flex: 1.1;
+    background: rgba(15, 18, 36, 0.85);
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.signup-card-container {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.register-header {
+    margin-bottom: 25px;
+}
+
+.reg-label {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.socials-top {
+    display: flex;
+    gap: 10px;
+}
+
+.social-btn {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 0.2s;
+}
+
+.social-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(139, 92, 246, 0.4);
+}
+
+.divider {
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    line-height: 0.1em;
+    margin: 25px 0;
+}
+
+.divider span {
+    background: rgb(15, 18, 36);
+    padding: 0 15px;
+    color: #6b7280;
+    font-size: 0.8rem;
+}
+
+.magic {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input-row.double {
+    display: flex;
+    gap: 12px;
+}
+
+.input-row.double .input-box {
+    flex: 1;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-box label {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+.input-field {
+    position: relative;
+    width: 100%;
+}
+
+.input-field i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.input-field input, .input-field select {
+    width: 100%;
+    padding: 11px 14px 11px 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 0.9rem;
+    outline: none;
+    transition: 0.2s;
+}
+
+.input-field select {
+    appearance: none;
+    cursor: pointer;
+    color: #d1d5db;
+}
+
+.input-field select option {
+    background-color: #0f1224;
+    color: white;
+}
+
+.input-field input:focus, .input-field select:focus {
+    border-color: #8B5CF6;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+}
+
+input::placeholder {
+    color: #4b5563;
+}
+
+.password-hint {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+#submit {
+    width: 100%;
+    background: #8B5CF6;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: 0.2s;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+#submit:hover {
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+.r-footer {
+    text-align: center;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rf {
+    color: #6b7280;
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+.rf a, .login-link a {
+    color: #8B5CF6;
+    text-decoration: none;
+}
+
+.rf a:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+
+.login-link {
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        margin: 10px;
+    }
+    .left-side {
+        display: none;
+    }
+    .right-side {
+        padding: 30px 20px;
+    }
+}
+   </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side: AI Branding & Value Props -->
+        <div class="left-side">
+            <div class="web-logo">
+                <img src="/images/logo.png" alt="GMP Technology logo" class="logo">
+                <p class="logo-title">GMP <span>Technology</span></p>               
+            </div>
+
+            <div class="wel-words">
+                <div class="badge-ai"><i class="fa-solid fa-robot"></i> AI Business Assistant</div>
+                <h1 class="wel">Start your <span>AI-Powered</span> Business Journey</h1>
+                <p class="hero">Build smart, automated business systems powered by advanced artificial intelligence.</p>
+            </div>
+
+            <div class="ai-features">
+                <div class="feature-item">
+                    <div class="feat-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div>
+                        <h4>AI-Powered Solutions</h4>
+                        <p>Leverage advanced intelligence to automate workflows and drive growth.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div>
+                        <h4>Secure & Compliant</h4>
+                        <p>Ensure enterprise systems meet strict industry compliance standards.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feat-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div>
+                        <h4>Real-time Analytics</h4>
+                        <p>Receive deep intelligence on your inventory, orders, and revenue streams.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-note">
+                <p><i class="fa-solid fa-circle" style="color: #10B981; font-size: 8px;"></i> Trusted by thousands of enterprises worldwide</p>
+            </div>
+        </div>
+
+        <!-- Right Side: Sleek Card Sign-Up Form -->
+        <div class="right-side">
+            <div class="signup-card-container">
+                <div class="register-header">
+                    <p class="reg-label">Register with:</p>
+                    <div class="socials-top">
+                        <button type="button" class="social-btn"><i class="fa-brands fa-google" style="color: #4285F4;"></i> Google</button>
+                        <button type="button" class="social-btn"><i class="fa-brands fa-apple"></i> Apple</button>
+                        <button type="button" class="social-btn"><i class="fa-brands fa-microsoft" style="color: #00A4EF;"></i> Microsoft</button>
+                    </div>
+                    <div class="divider"><span>Or</span></div>
+                </div>
+
+                <form class="magic" id="signupForm">
+                    <div class="input-row">
+                        <div class="input-box">
+                            <label>Enterprise Name</label>
+                            <div class="input-field">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <input type="text" id="enterpriseName" placeholder="e.g., Genix Corp" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-row double">
+                        <div class="input-box">
+                            <label>Business Email</label>
+                            <div class="input-field">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" id="email" placeholder="name@company.com" required>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <label>Country</label>
+                            <div class="input-field">
+                                <i class="fa-solid fa-globe"></i>
+                                <input type="text" id="country" placeholder="Country">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Enterprise Type</label>
+                        <div class="input-field">
+                            <i class="fa-solid fa-industry"></i>
+                            <select id="enterpriseType" required>
+                                <option value="" disabled selected>Select Enterprise Type</option>
+                                <option value="Supermarket">Supermarket</option>
+                                <option value="Restaurant">Restaurant</option>
+                                <option value="Electronic">Electronic</option>
+                                <option value="Office">Office</option>
+                                <option value="Construction">Construction</option>
+                                <option value="Manufacturing">Manufacturing industry</option>
+                                <option value="Boutique">Boutique</option>
+                                <option value="Real Estate">Real Estate</option>
+                                <option value="Farm">Farm</option>
+                                <option value="Car Dealership">Car Dealership</option>
+                                <option value="Event Management">Event Management</option>
+                                <option value="Bank">Bank</option>
+                                <option value="Cosmetology">Cosmetology</option>
+                                <option value="Grocery">Grocery</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Password</label>
+                        <div class="input-field">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="password" placeholder="••••••••••••" required>
+                        </div>
+                        <span class="password-hint">Minimum length is 8 characters with upper & lowercase letters.</span>
+                    </div>
+
+                    <button type="submit" id="submit">Create Account</button>
+
+                    <div class="r-footer">
+                        <p class="rf">By creating an account, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+                        <p class="login-link">Already have an account? <a href="/html/Pages/login.html">Log in</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="genix.js"></script>
+</body>
+</html>
